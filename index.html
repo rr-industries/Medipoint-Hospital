@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medipoint Hospital - Quality Healthcare in Nagpur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a75ff;
+            --primary-dark: #0066ff;
+            --secondary: #2dd35c;
+            --accent: #5553ff;
+            --light: #f0f4ff;
+            --dark: #1e293b;
+            --text: #334155;
+            --white: #ffffff;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --border-radius: 12px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .appointment-btn {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .appointment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-btn {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .profile-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--dark);
+            cursor: pointer;
+            margin-right: 15px;
+        }
+
+        /* Page Content */
+        .page-content {
+            display: none;
+            padding: 40px 0;
+            min-height: 60vh;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, rgba(240, 244, 255, 0.7), rgba(240, 244, 255, 0.5)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1800&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            position: relative;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .secondary-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Quick Access Section */
+        .quick-access {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .access-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .access-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .access-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .access-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .access-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .access-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .specialty-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .specialty-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialty-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .specialty-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .specialty-card:hover .specialty-img img {
+            transform: scale(1.05);
+        }
+
+        .specialty-content {
+            padding: 25px;
+        }
+
+        .specialty-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .specialty-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .facility-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facility-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .facility-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .facility-card:hover .facility-img img {
+            transform: scale(1.05);
+        }
+
+        .facility-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .facility-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Doctors Section */
+        .doctors {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .doctor-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .doctor-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctor-img {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .doctor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .doctor-card:hover .doctor-img img {
+            transform: scale(1.05);
+        }
+
+        .doctor-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .doctor-qualification {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .doctor-department {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .doctor-experience {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .doctor-specialties {
+            margin-bottom: 20px;
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+
+        .doctor-actions {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 15px;
+        }
+
+        /* About Page */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 600px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            background: var(--light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .facilities-list {
+            margin-top: 30px;
+        }
+
+        .facilities-list h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .facilities-grid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .facility-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .facility-item i {
+            color: var(--primary);
+        }
+
+        /* Departments Page */
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .department-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .department-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .department-card p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-list i {
+            color: var(--primary);
+        }
+
+        /* Contact Page */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .contact-details li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-details i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .contact-details a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 117, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+        }
+
+        /* Booking Page */
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .booking-info {
+            background: var(--light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .booking-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column h3 img {
+            height: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Welcome Modal */
+        .welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.5s ease;
+        }
+
+        .welcome-modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .modal-content p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-container,
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: var(--white);
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 15px 20px;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding: 120px 0;
+            }
+
+            .doctor-actions {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .doctor-img {
+                height: 300px;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917276080060?text=Hello%20Medipoint%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Welcome Modal -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Welcome to Medipoint Hospital!</h2>
+            <p>Your health is our priority. We're committed to providing you with the highest quality healthcare in a comfortable and caring environment.</p>
+            <button class="primary-btn" id="startExploring">Start Exploring</button>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="mp.png" alt="Medipoint Hospital Logo">
+                <span class="logo-text">Medipoint Hospital</span>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link page-link" data-page="home">Home</a></li>
+                <li><a href="#about" class="nav-link page-link" data-page="about">About Us</a></li>
+                <li><a href="#departments" class="nav-link page-link" data-page="departments">Departments</a></li>
+                <li><a href="#doctors" class="nav-link page-link" data-page="home" data-section="doctors">Doctors</a></li>
+                <li><a href="#contact" class="nav-link page-link" data-page="contact">Contact</a></li>
+                <li><a href="#booking" class="nav-link page-link" data-page="booking">Book Appointment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Quality Healthcare <span style="color: var(--primary);">Made Accessible</span></h1>
+                    <p class="hero-description">Medipoint Hospital provides comprehensive medical care with state-of-the-art technology and renowned specialists, all under one roof in West Nagpur.</p>
+                    <div class="hero-buttons">
+                        <a href="#booking" class="primary-btn page-link" data-page="booking">Book Appointment</a>
+                        <a href="#departments" class="secondary-btn page-link" data-page="departments">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section class="quick-access">
+            <div class="container">
+                <h2 class="section-title">Quick <span>Access</span></h2>
+                <div class="access-cards">
+                    <div class="access-card">
+                        <i class="fas fa-ambulance"></i>
+                        <h3>Emergency Care</h3>
+                        <p>Immediate medical attention for serious conditions</p>
+                        <a href="tel:+917276080060" class="card-link">Call: +91 72760 80060</a>
+                    </div>
+                    <div class="access-card">
+                        <i class="fas fa-laptop-medical"></i>
+                        <h3>Online Consultation</h3>
+                        <p>Consult with our doctors from the comfort of your home</p>
+                        <a href="#booking" class="card-link page-link" data-page="booking">Schedule Now</a>
+                    </div>
+                    <div class="access-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Find a Doctor</h3>
+                        <p>Browse our team of experienced medical professionals</p>
+                        <a href="#doctors" class="card-link page-link" data-page="doctors">View Doctors</a>
+                    </div>
+                    <div class="access-card">
+                        <i class="fas fa-first-aid"></i>
+                        <h3>Health Packages</h3>
+                        <p>Comprehensive health check-up packages at affordable rates</p>
+                        <a href="#contact" class="card-link page-link" data-page="contact">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialties Section -->
+        <section class="specialties">
+            <div class="container">
+                <h2 class="section-title">Our <span>Specialties</span></h2>
+                <div class="specialty-cards">
+                    <div class="specialty-card">
+                        <div class="specialty-img">
+                            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Cardiology">
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Cardiology</h3>
+                            <p>Comprehensive heart care with advanced diagnostic and treatment facilities.</p>
+                            <a href="#departments" class="card-link page-link" data-page="departments">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="specialty-img">
+                            <img src="https://images.unsplash.com/photo-1638803040283-7a5ffd48dad5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Pediatrics">
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Pediatrics</h3>
+                            <p>Specialized healthcare for children from newborns to adolescents.</p>
+                            <a href="#departments" class="card-link page-link" data-page="departments">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="specialty-img">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="Orthopedics">
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Orthopedics</h3>
+                            <p>Treatment for musculoskeletal injuries and conditions with advanced techniques.</p>
+                            <a href="#departments" class="card-link page-link" data-page="departments">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities Section -->
+        <section class="facilities">
+            <div class="container">
+                <h2 class="section-title">Our <span>Facilities</span></h2>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="mph.png" alt="Emergency Ward">
+                        </div>
+                        <div class="facility-content">
+                            <h3>24/7 Emergency Ward</h3>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80" alt="Operation Theater">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Modern Operation Theaters</h3>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" alt="ICU">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Intensive Care Unit</h3>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1599045118108-bf9954418b76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Pharmacy">
+                        </div>
+                        <div class="facility-content">
+                            <h3>In-house Pharmacy</h3>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Laboratory">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Advanced Laboratory</h3>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-img">
+                            <img src="cpr.png" alt="Patient Rooms">
+                        </div>
+                        <div class="facility-content">
+                            <h3>Comfortable Patient Rooms</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section class="doctors" id="doctors">
+            <div class="container">
+                <h2 class="section-title">Our <span>Doctors</span></h2>
+                <div class="doctor-cards">
+                    <div class="doctor-card">
+                        <div class="doctor-img">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Dr. Bhalchandra Meshram">
+                        </div>
+                        <div class="doctor-info">
+                            <h3>Dr. Bhalchandra Meshram</h3>
+                            <div class="doctor-qualification">M.B.B.S., M.D. (Medicine)</div>
+                            <div class="doctor-department">Internal Medicine</div>
+                            <div class="doctor-actions">
+                                <a href="#booking" class="appointment-btn page-link" data-page="booking">Book Appointment</a>
+                                <a href="dr-meshram.html" class="profile-btn" target="_blank">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-img">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Dr. Anamika Nandagavali">
+                        </div>
+                        <div class="doctor-info">
+                            <h3>Dr. Anamika Meshram</h3>
+                            <div class="doctor-qualification">M.B.B.S., M.D. (Obs & Gynae)</div>
+                            <div class="doctor-department">Obstetrics & Gynecology</div>
+                            <div class="doctor-actions">
+                                <a href="#booking" class="appointment-btn page-link" data-page="booking">Book Appointment</a>
+                                <a href="dr-anamika.html" class="profile-btn" target="_blank">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page-content">
+        <div class="container">
+            <h2 class="section-title">About <span>Medipoint Hospital</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="mph.png" alt="Medipoint Hospital">
+                </div>
+                <div class="about-text">
+                    <h2>A New Era in Healthcare</h2>
+                    <p>A new era started in the Medical world on 14th Dec 2012 with the opening of Medipoint Hospital, the best setup in West Nagpur (New Nagpur) at Manish nagar. It has made history by being the first hospital of its kind to offer comprehensive health care at affordable cost under one roof in this area.</p>
+                    <p>It has 20 beds, spread across 3 floors over an area of more than 3600 sqft. It provides all medical, surgical and super specialty care by renowned doctors using state-of-the art technology.</p>
+                    
+                    <div class="facilities-list">
+                        <h3>Our Facilities</h3>
+                        <p>We offer a wide range of facilities to ensure our patients receive the best possible care in a comfortable environment:</p>
+                        
+                        <div class="facilities-grid-list">
+                            <div>
+                                <div class="facility-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>General Ward</span>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Semi-Deluxe Rooms</span>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Deluxe Rooms</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="facility-item">
+                                    <i class="fas fa-procedures"></i>
+                                    <span>Modern Operation Theaters</span>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-plus-square"></i>
+                                    <span>ICU with Ventilators</span>
+                                </div>
+                                <div class="facility-item">
+                                    <i class="fas fa-ambulance"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h3>Our Mission</h3>
+                                <p>The Best Environment for Patient Recovery and Comfort. Highly Qualified Professionals who believe in and contribute to Hospital's vision.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <h3>Our Philosophy</h3>
+                                <p>Medipoint Hospital is committed to excellence in health care by providing safe, ethical and trust worthy health care.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h3>Our Motto</h3>
+                                <p>"A Care you will believe in" - Our management team is dedicated to providing quick and timely response with efficient service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Departments Page -->
+    <div id="departments" class="page-content">
+        <div class="container">
+            <h2 class="section-title">Our <span>Departments</span></h2>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <h3>Internal Medicine</h3>
+                    <p>Comprehensive care for adult diseases with a focus on diagnosis and non-surgical treatment.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> General Medicine</li>
+                        <li><i class="fas fa-check-circle"></i> Diabetes Management</li>
+                        <li><i class="fas fa-check-circle"></i> Hypertension Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Infectious Diseases</li>
+                    </ul>
+                </div>
+                <div class="department-card">
+                    <h3>Obstetrics & Gynecology</h3>
+                    <p>Comprehensive women's health services from adolescence through menopause and beyond.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> Prenatal Care</li>
+                        <li><i class="fas fa-check-circle"></i> Labor & Delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Gynecological Surgery</li>
+                        <li><i class="fas fa-check-circle"></i> Menopause Management</li>
+                    </ul>
+                </div>
+                <div class="department-card">
+                    <h3>Pediatrics</h3>
+                    <p>Specialized medical care for infants, children, and adolescents up to age 18.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> Well-child Visits</li>
+                        <li><i class="fas fa-check-circle"></i> Vaccinations</li>
+                        <li><i class="fas fa-check-circle"></i> Childhood Illness Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Developmental Assessments</li>
+                    </ul>
+                </div>
+                <div class="department-card">
+                    <h3>Orthopedics</h3>
+                    <p>Diagnosis and treatment of disorders of the bones, joints, ligaments, tendons, and muscles.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> Fracture Treatment</li>
+                        <li><i class="fas fa-check-circle"></i> Joint Replacement</li>
+                        <li><i class="fas fa-check-circle"></i> Arthroscopic Surgery</li>
+                        <li><i class="fas fa-check-circle"></i> Sports Medicine</li>
+                    </ul>
+                </div>
+                <div class="department-card">
+                    <h3>Cardiology</h3>
+                    <p>Prevention, diagnosis, and treatment of diseases and conditions of the cardiovascular system.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> Cardiac Consultation</li>
+                        <li><i class="fas fa-check-circle"></i> ECG & Stress Testing</li>
+                        <li><i class="fas fa-check-circle"></i> Echocardiography</li>
+                        <li><i class="fas fa-check-circle"></i> Heart Disease Management</li>
+                    </ul>
+                </div>
+                <div class="department-card">
+                    <h3>Emergency Medicine</h3>
+                    <p>24/7 emergency care for acute illnesses and injuries that require immediate medical attention.</p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-check-circle"></i> Trauma Care</li>
+                        <li><i class="fas fa-check-circle"></i> Critical Care</li>
+                        <li><i class="fas fa-check-circle"></i> Emergency Surgery</li>
+                        <li><i class="fas fa-check-circle"></i> Acute Illness Treatment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctors Page -->
+    <div id="doctors" class="page-content">
+        <!-- Doctors Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Our Expert <span style="color: var(--primary);">Medical Team</span></h1>
+                <p class="hero-description">Meet our team of highly qualified and experienced doctors dedicated to providing you with the best healthcare services.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Doctors Grid -->
+            <section class="doctor-cards" id="doctorsGrid">
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Dr. Bhalchandra Meshram">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Bhalchandra Meshram</h3>
+                        <div class="doctor-qualification">M.B.B.S., M.D. (Medicine)</div>
+                        <div class="doctor-department">Internal Medicine</div>
+                        <div class="doctor-experience">21+ years of experience</div>
+                        <div class="doctor-specialties">
+                            <span class="specialty-tag">Diabetes</span>
+                            <span class="specialty-tag">Hypertension</span>
+                            <span class="specialty-tag">General Medicine</span>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="#booking" class="appointment-btn page-link" data-page="booking">Book Appointment</a>
+                            <a href="dr-meshram.html" class="profile-btn" target="_blank">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Dr. Anamika Nandagavali">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Anamika Nandagavali</h3>
+                        <div class="doctor-qualification">M.B.B.S., M.D. (Obs & Gynae)</div>
+                        <div class="doctor-department">Obstetrics & Gynecology</div>
+                        <div class="doctor-experience">15 years of experience</div>
+                        <div class="doctor-specialties">
+                            <span class="specialty-tag">Pregnancy</span>
+                            <span class="specialty-tag">Women's Health</span>
+                            <span class="specialty-tag">Gynecological Surgery</span>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="#booking" class="appointment-btn page-link" data-page="booking">Book Appointment</a>
+                            <a href="dr-anamika.html" class="profile-btn" target="_blank">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page-content">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We're here to answer any questions you may have about our services or to schedule an appointment. Reach out to us and we'll respond as soon as we can.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot No. 4, Near Kachore Lawn, Manish Nagar, New Somalwada, Nagpur-440015, Maharashtra, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>
+                                <a href="tel:+917276080060" style="color: var(--text);">+91 72760 80060</a><br>
+                                <a href="tel:+919890000000" style="color: var(--text);">+91 98900 00000</a><br>
+                                <a href="tel:+919890000001" style="color: var(--text);">+91 98900 00001</a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@medipointhospital.co.in" style="color: var(--text);">info@medipointhospital.co.in</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Open 24/7</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="3ad2ac7d-5205-4c7f-b856-de35b9a592f3">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d930.6339537308373!2d79.0784850726222!3d21.091193999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf118112d70f%3A0x9c6880ebab3cc982!2sMedipoint%20Hospital!5e0!3m2!1sen!2sin!4v1757571868049!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Page -->
+    <div id="booking" class="page-content">
+        <div class="container">
+            <h2 class="section-title">Book <span>Appointment</span></h2>
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h3>Schedule Your Visit</h3>
+                    <p>Booking an appointment at Medipoint Hospital is easy. Fill out the form and our staff will contact you to confirm your appointment time.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>
+                                For urgent appointments, call us directly:<br>
+                                <a href="tel:+917276080060" style="color: var(--text);">+91 72760 80060</a><br>
+                                <a href="tel:+919890000000" style="color: var(--text);">+91 98900 00000</a><br>
+                                <a href="tel:+919890000001" style="color: var(--text);">+91 98900 00001</a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Open 24/7</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot No. 4, Near Kachore Lawn, Manish Nagar, New Somalwada, Nagpur-440015</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="access-card" style="margin-top: 30px;">
+                        <i class="fas fa-video"></i>
+                        <h3>Online Consultation</h3>
+                        <p>Can't visit in person? Schedule a virtual consultation with our specialists.</p>
+                        <a href="#contact" class="card-link page-link" data-page="contact">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="booking-form">
+                    <h3>Appointment Request Form</h3>
+                    <form id="appointmentForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="3ad2ac7d-5205-4c7f-b856-de35b9a592f3">
+                        <div class="form-group">
+                            <label for="patientName">Full Name</label>
+                            <input type="text" id="patientName" name="name" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientEmail">Email Address</label>
+                            <input type="email" id="patientEmail" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientPhone">Phone Number</label>
+                            <input type="tel" id="patientPhone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Preferred Date</label>
+                            <input type="date" id="appointmentDate" name="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Preferred Time</label>
+                            <select id="appointmentTime" name="time" class="form-control" required>
+                                <option value="">Select Time</option>
+                                <!-- Times will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" name="department" class="form-control" required>
+                                <option value="">Select Department</option>
+                                <option value="Internal Medicine">Internal Medicine</option>
+                                <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Emergency Medicine">Emergency Medicine</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor">Preferred Doctor (Optional)</label>
+                            <select id="doctor" name="doctor" class="form-control">
+                                <option value="">Select Doctor</option>
+                                <option value="Dr. Bhalchandra Meshram">Dr. Bhalchandra Meshram</option>
+                                <option value="Dr. Anamika Nandagavali">Dr. Anamika Nandagavali</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for Visit</label>
+                            <textarea id="reason" name="reason" class="form-control" placeholder="Briefly describe your symptoms or reason for appointment" required></textarea>
+                        </div>
+                        <button type="submit" class="primary-btn">Request Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>
+                        <img src="mp.png" alt="Medipoint Hospital Logo">
+                        Medipoint Hospital
+                    </h3>
+                    <p>Providing comprehensive healthcare at affordable cost under one roof in West Nagpur since 2012.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="page-link" data-page="home">Home</a></li>
+                        <li><a href="#about" class="page-link" data-page="about">About Us</a></li>
+                        <li><a href="#departments" class="page-link" data-page="departments">Departments</a></li>
+                        <li><a href="#doctors" class="page-link" data-page="doctors">Our Doctors</a></li>
+                        <li><a href="#booking" class="page-link" data-page="booking">Appointments</a></li>
+                        <li><a href="#contact" class="page-link" data-page="contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot No. 4, Near Kachore Lawn, Manish Nagar, New Somalwada, Nagpur-440015, Maharashtra, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>
+                                <a href="tel:+917276080060">+91 72760 80060</a><br>
+                                <a href="tel:+919890000000">+91 98900 00000</a><br>
+                                <a href="tel:+919890000001">+91 98900 00001</a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@medipointhospital.co.in">info@medipointhospital.co.in</a></span>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Emergency Contacts</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-ambulance"></i>
+                            <span>Emergency: <a href="tel:+917276080060">+91 72760 80060</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Appointments: <a href="tel:+919890000000">+91 98900 00000</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-info-circle"></i>
+                            <span>Information: <a href="tel:+919890000001">+91 98900 00001</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Open 24/7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Medipoint Hospital. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Page Navigation
+const pageLinks = document.querySelectorAll('.page-link');
+const pageContents = document.querySelectorAll('.page-content');
+const footer = document.getElementById('main-footer');
+
+pageLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetPage = link.getAttribute('data-page');
+        
+        // Hide all pages
+        pageContents.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // Show target page
+        document.getElementById(targetPage).classList.add('active');
+        
+        // Show footer only for home page
+        if (targetPage === 'home') {
+            footer.style.display = 'block';
+        } else {
+            footer.style.display = 'none';
+        }
+        
+        // Close mobile menu if open
+        navMenu.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+        
+        // If the link has a data-section attribute, scroll to that section
+        if (link.hasAttribute('data-section')) {
+            const targetSection = link.getAttribute('data-section');
+            setTimeout(() => {
+                const sectionElement = document.getElementById(targetSection);
+                if (sectionElement) {
+                    sectionElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    });
+});
+
+        // Welcome Modal
+        const welcomeModal = document.getElementById('welcomeModal');
+        const closeModal = document.getElementById('closeModal');
+        const startExploring = document.getElementById('startExploring');
+        
+        // Check if modal has been shown before
+        if (!localStorage.getItem('modalShown')) {
+            setTimeout(() => {
+                welcomeModal.classList.add('active');
+            }, 1000);
+        }
+        
+        closeModal.addEventListener('click', () => {
+            welcomeModal.classList.remove('active');
+            localStorage.setItem('modalShown', 'true');
+        });
+        
+        startExploring.addEventListener('click', () => {
+            welcomeModal.classList.remove('active');
+            localStorage.setItem('modalShown', 'true');
+        });
+        
+        // Set default date to today and disable past dates
+        const appointmentDate = document.getElementById('appointmentDate');
+        if (appointmentDate) {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1;
+            let dd = today.getDate();
+            
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+            
+            const formattedToday = `${yyyy}-${mm}-${dd}`;
+            appointmentDate.value = formattedToday;
+            appointmentDate.min = formattedToday;
+        }
+        
+        // Generate time slots for appointment booking
+        const appointmentTime = document.getElementById('appointmentTime');
+        if (appointmentTime) {
+            // Clear existing options except the first one
+            while (appointmentTime.options.length > 1) {
+                appointmentTime.remove(1);
+            }
+            
+            // Generate time slots from 9 AM to 8 PM
+            for (let hour = 9; hour <= 20; hour++) {
+                for (let minute = 0; minute < 60; minute += 30) {
+                    // Skip if it's beyond 8 PM
+                    if (hour === 20 && minute > 0) break;
+                    
+                    const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                    const displayTime = `${hour % 12 === 0 ? 12 : hour % 12}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`;
+                    
+                    const option = document.createElement('option');
+                    option.value = timeString;
+                    option.textContent = displayTime;
+                    appointmentTime.appendChild(option);
+                }
+            }
+        }
+        
+        // Update time slots when date changes
+        if (appointmentDate) {
+            appointmentDate.addEventListener('change', function() {
+                const selectedDate = new Date(this.value);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                // Clear existing options except the first one
+                while (appointmentTime.options.length > 1) {
+                    appointmentTime.remove(1);
+                }
+                
+                let startHour = 9; // Default start at 9 AM
+                
+                // If selected date is today, start from current time
+                if (selectedDate.getTime() === today.getTime()) {
+                    const now = new Date();
+                    let currentHour = now.getHours();
+                    let currentMinute = now.getMinutes();
+                    
+                    // Round up to the next hour
+                    currentHour = currentMinute > 0 ? currentHour + 1 : currentHour;
+                    startHour = currentHour;
+                }
+                
+                // Generate time slots from start hour to 8 PM
+                for (let hour = startHour; hour <= 20; hour++) {
+                    for (let minute = 0; minute < 60; minute += 30) {
+                        // Skip if it's beyond 8 PM
+                        if (hour === 20 && minute > 0) break;
+                        
+                        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                        const displayTime = `${hour % 12 === 0 ? 12 : hour % 12}:${minute.toString().padStart(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}`;
+                        
+                        const option = document.createElement('option');
+                        option.value = timeString;
+                        option.textContent = displayTime;
+                        appointmentTime.appendChild(option);
+                    }
+                }
+            });
+        }
+
+        // Form submission handlers
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // This will be handled by Web3Forms
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+
+        document.getElementById('appointmentForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // This will be handled by Web3Forms
+            alert('Thank you for your appointment request. We will contact you shortly to confirm your appointment!');
+            this.reset();
+            
+            // Reset date to today
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1;
+            let dd = today.getDate();
+            
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+            
+            const formattedToday = `${yyyy}-${mm}-${dd}`;
+            appointmentDate.value = formattedToday;
+            
+            // Regenerate time slots
+            const event = new Event('change');
+            appointmentDate.dispatchEvent(event);
+        });
+    </script>
+</body>
+</html>
+
